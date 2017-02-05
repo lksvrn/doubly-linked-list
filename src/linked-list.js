@@ -51,7 +51,6 @@ class LinkedList {
 
     insertAt(index, data) {
       var current = this._head;
-      var count = 0;
       var beforeNodeToInsert = null;
       var newNode =new Node(data,null,null);
       for (var i = 0; i < index; i++) {
@@ -67,6 +66,7 @@ class LinkedList {
       newNode.prev = beforeNodeToInsert;
       newNode.next = current;
       this.length++;
+
       return this;
     }
 
@@ -82,6 +82,8 @@ class LinkedList {
       this._head = null;
       this._tail = null;
       this.length = 0;
+
+      return this;
     }
 
     deleteAt(index) {
@@ -102,6 +104,7 @@ class LinkedList {
         afterNodeToDelete.prev = beforeNodeToDelete;
       }
       this.length--;
+
       return this;
     }
 
@@ -117,6 +120,7 @@ class LinkedList {
       temp = this._head;
       this._head = this._tail;
       this._tail = temp;
+
       return this;
     }
 
