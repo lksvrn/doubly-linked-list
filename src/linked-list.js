@@ -39,18 +39,30 @@ class LinkedList {
 
     at(index) {
       var current = this._head;
-      for (var i = 0; i < index; i++) {
+      for (var i = 0; i < this.length; i++) {
+        if(index == i) {
+          return current.data
+        } else {
         current = current.next;
+        }
       }
       return current.data;
     }
 
     insertAt(index, data) {
       var current = this._head;
-      var newNode = new Node (data, null, null);
-
-
-
+      var newNode =new Node(data,null,null);
+      for (var i = 0; i < this.length; i++) {
+        if(index == i) {
+          newNode.next = current;
+          newNode.prev = current.prev;
+          current.prev.next = newNode;
+          this.length++;
+          /*return true;*/
+        } else {
+        current = current.next;
+        }
+      }
     }
 
     isEmpty() {
