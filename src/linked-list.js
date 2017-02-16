@@ -87,7 +87,6 @@ class LinkedList {
 
     deleteAt(index) {
       var current = this._head;
-      var count = 0;
       if(this.length == 0 || index > this.length) {
         return 'Error';
       }
